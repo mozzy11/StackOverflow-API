@@ -6,14 +6,11 @@ class Answers (object):
     ans_content =""
 
     def add_answers(self, qtn_id, ans_content):
-        if len(Answers.answers) > 0:
+        if len(Answers.answers) >= 0:
             self.ans_id = len(Answers.answers) + 1
             self.ans_content = ans_content
             self.qtn_id = qtn_id
-        else:
-            self.ans_id = 1
-            self.ans_content = ans_content
-            self.qtn_id  = qtn_id
+
 
         self.ans = {"ans_id ": self.ans_id , "qtn_id": self.qtn_id, " ans_content": self. ans_content}
 

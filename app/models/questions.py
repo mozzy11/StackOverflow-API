@@ -18,14 +18,11 @@ class Questions(object):
     User_id = 0
 
     def add_question(self, qtn_body, User_id):
-        if len(Questions.questions) > 0:
-            self.qtn_id = Questions.questions[-1].get('qtn_id') + 1
+        if len(Questions.questions) >= 0:
+            self.qtn_id = len(Questions.questions) + 1
             self.qtn_body = qtn_body
             self.User_id = User_id
-        else:
-            qtn_id = 1
-            self.qtn_body = qtn_body
-            self.User_id = User_id
+
 
         self.qtn = {"qtn_id": self.qtn_id, "qtn_body": self.qtn_body, "User_id": self.User_id}
 

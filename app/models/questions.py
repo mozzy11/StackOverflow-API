@@ -1,5 +1,8 @@
 class Questions(object):
-     questions = [
+
+
+    questions = [
+
         {
             'qtn_id': 1,
             'qtn_body': 'what is Andela',
@@ -11,6 +14,7 @@ class Questions(object):
             'User_id': 2
         }
     ]
+
 
 
      qtn = {}
@@ -33,3 +37,6 @@ class Questions(object):
 
      def get_all_questions(self):
          return Questions.questions
+
+   
+

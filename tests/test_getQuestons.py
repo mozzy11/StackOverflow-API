@@ -1,6 +1,6 @@
 import unittest
 import json
-from app.views.get_all_qtns import app
+from app.views.vew import app
 
 class Test_Case(unittest.TestCase):
 

@@ -1,4 +1,4 @@
-from app.views.get_all_qtns import app
+from app.views.vew import app
 
 
 if __name__ == '__main__':

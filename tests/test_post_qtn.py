@@ -24,10 +24,6 @@ class Test_Case(unittest.TestCase):
 
 
 
-        def test_wrong_method(self):
-           res = self.app.get(self.hostname, data = json.dumps(self.qtn ))
-           self.assertEqual(res.status_code, 405)
-
         def test_ryt_response(self):
            respon = self.app.post(self.hostname , data = json.dumps(self.qtn ),content_type='application/json',)
            assert respon.status_code == 200
@@ -40,9 +36,7 @@ class Test_Case(unittest.TestCase):
             respon = self.app.post(self.hostname,  data = json.dumps(self.qtn ),content_type='application/json',)
             self.assertIn('what is a boot camp', str(respon.data))
 
-        def test_get_ryt_response(self):
-            respon = self.app.get(self.hostname)
-            self.assertNotIn('what is a boot camp', str(respon.data))
+
 
 if __name__ == "__main__":
     unittest.main()

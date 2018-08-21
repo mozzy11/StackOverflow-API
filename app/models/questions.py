@@ -21,7 +21,7 @@ class Questions(object):
 
 
      def add_question(self,  qtn_body,User_id):
-         if len(Questions.questions) > 0:
+         if len(Questions.questions) >= 0:
              self.qtn_id = len(Questions.questions) + 1
              self.qtn_body = qtn_body
              self.User_id = User_id

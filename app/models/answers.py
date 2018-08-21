@@ -17,4 +17,8 @@ class Answers (object):
         Answers.answers(self.ans)
 
     def get_all_answers(self):
+
         return Answers.answers
+
+      
+

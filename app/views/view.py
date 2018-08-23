@@ -81,7 +81,6 @@ qtns = qtn_obj.get_all_questions()
 def get_qtn(questionId):
         qtn = {}
         bad_object = {}
-        #response = Response(json.dumps(""), status = None , mimetype="")
         for item in qtns:
             if item['qtn_id'] == questionId:
                 qtn = {
@@ -89,7 +88,7 @@ def get_qtn(questionId):
                     'qtn_body': item['qtn_body'],
                     'user_id': item['user_id']
                 }
-               # return jsonify(qtn)
+
             else:
                  bad_object = {
                     "error": "The QTN u requested  doesnt exist",
@@ -97,7 +96,7 @@ def get_qtn(questionId):
                         " Please Request usng an Existing Question id"}
 
 
-               # return response
+
         if any(qtn):
             return jsonify(qtn)
         else:

@@ -1,6 +1,7 @@
 import unittest
 import json
 from app.views.view import app
+from app.models.questions  import  Questions
 
 class Test_Case(unittest.TestCase):
 
@@ -15,6 +16,8 @@ class Test_Case(unittest.TestCase):
             'user_id': 1
         }
 
+        qtnobj = Questions()
+        qtnobj.set_qtn(1, "what is Andela", 1)
 
         def test_wrong_method(self):
            res = self.app.post(self.hostname, data = self.question )

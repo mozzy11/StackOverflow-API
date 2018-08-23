@@ -18,38 +18,28 @@ class Test_Case(unittest.TestCase):
         }
 
         qtnobj = Questions()
-        qtnobj.questions =  [
+        qtnobj.set_qtn(1, "what is Andela", 1 )
 
-            {
 
-                'qtn_id': 1,
-                'qtn_body': 'what is Andela',
-                'user_id': 1
-
-            },
-
-            {
-                'qtn_id': 2,
-                'qtn_body': 'what is a bootCamp',
-                'user_id': 1
-            }
-
-        ]
 
         def test_wrong_method(self):
+
            res = self.app.post(self.hostname, data = self.question )
            self.assertEqual(res.status_code, 405)
 
         def test_get_qtn(self):
+
            respon = self.app.get(self.hostname)
            self.assertTrue(respon.status_code == 200)
 
 
         def test_get_ryt_response(self):
+
             respon = self.app.get(self.hostname)
             self.assertIn('what is Andela', str(respon.data))
 
         def test_get_ryt_response(self):
+
             respon = self.app.get(self. null_qtn_host)
             self.assertIn('Please Request usng an Existing Question id', str(respon.data))
 

@@ -1,6 +1,7 @@
 import unittest
 import json
 from app.views.view import app
+from app.models.questions  import  Questions
 
 class Test_Case(unittest.TestCase):
 
@@ -21,7 +22,8 @@ class Test_Case(unittest.TestCase):
             "ans_id": 2000,
             "ans_content": "A boot Camp is a two weeks training for a new Intake",
         }
-
+        qtnobj = Questions()
+        qtnobj.set_qtn(1, "what is Andela", 1)
 
 
         def test_wrong_method(self):

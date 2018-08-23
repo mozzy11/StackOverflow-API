@@ -12,13 +12,13 @@ class Test_Case(unittest.TestCase):
         question = {
             'qtn_id': 1,
             'qtn_body': 'what is Andela',
-            'User_id': 1
+            'user_id': 1
         }
 
 
         def test_wrong_method(self):
            res = self.app.post(self.hostname, data = self.question )
-           self.assertEqual(res.status_code, 500)
+           self.assertEqual(res.status_code, 400)
 
         def test_get_qtn(self):
            respon = self.app.get(self.hostname)

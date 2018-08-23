@@ -14,7 +14,7 @@ class Test_Case(unittest.TestCase):
         qtn = {
             "qtn_id": 2,
             "qtn_body": "what is a boot camp",
-            "User_id": 2
+            "user_id": 2
             }
 
         invalid_qtn = {
@@ -22,6 +22,7 @@ class Test_Case(unittest.TestCase):
             "ans_content": "A boot Camp is a two weeks training for a new Intake",
         }
 
+        empty = {}
 
 
         def test_ryt_response(self):
@@ -35,6 +36,10 @@ class Test_Case(unittest.TestCase):
         def test_get_ryt_response(self):
             respon = self.app.post(self.hostname,  data = json.dumps(self.qtn ),content_type='application/json',)
             self.assertIn('what is a boot camp', str(respon.data))
+
+        def test_empty_qtn(self):
+            respon = self.app.post(self.hostname, data=json.dumps(self.empty ), content_type='application/json', )
+            self.assertIn('Invalid Qtn', str(respon.data))
 
 
 

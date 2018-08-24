@@ -69,7 +69,13 @@ def get_all_questions():
     questions = qtn_obj.get_all_questions()
     if questions:
         return jsonify({'questions': questions})
-
+    else :
+        bad_object = {
+            "error": "No question avalable yet",
+            "help_string":
+                " Please First add questions"}
+        response = Response(json.dumps(bad_object), status=400, mimetype="appliation/json")
+        return response
 
 
 
